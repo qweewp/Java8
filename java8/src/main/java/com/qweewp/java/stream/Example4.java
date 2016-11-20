@@ -23,4 +23,8 @@ public class Example4 {
                 .map(Role::getName)
                 .anyMatch(name -> ADMIN_ROLE.equals(name));
     }
+
+    public List<User> getUsers() {
+        return users;
+    }
 }

@@ -1,6 +1,7 @@
 package com.qweewp.java;
 
 public class UserDto {
+
     private Long id;
     private String name;
 

@@ -13,4 +13,8 @@ public class Example7 {
                 .map(User::getAge)
                 .reduce(0, Integer::sum);
     }
+
+    public Set<User> getUsers() {
+        return users;
+    }
 }

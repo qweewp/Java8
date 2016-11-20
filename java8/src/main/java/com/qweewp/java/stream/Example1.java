@@ -26,4 +26,8 @@ public class Example1 {
         );
         return editors;
     }
+
+    public Set<User> getUsers() {
+        return users;
+    }
 }

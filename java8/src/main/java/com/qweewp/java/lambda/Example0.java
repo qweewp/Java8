@@ -17,4 +17,8 @@ public class Example0 {
                         .anyMatch(r -> r.getPermissions().contains(Permission.EDIT)))
                 .collect(toSet());
     }
+
+    public Set<User> getUsers() {
+        return users;
+    }
 }

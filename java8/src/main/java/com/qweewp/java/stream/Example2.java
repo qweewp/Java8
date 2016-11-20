@@ -23,4 +23,8 @@ public class Example2 {
         );
         return found.get();
     }
+
+    public Set<User> getUsers() {
+        return users;
+    }
 }
