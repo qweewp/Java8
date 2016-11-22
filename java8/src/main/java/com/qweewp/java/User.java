@@ -69,4 +69,8 @@ public class User {
         result = 31 * result + (roles != null ? roles.hashCode() : 0);
         return result;
     }
+
+    public boolean hasEditPermission() {
+        return roles.stream().anyMatch(role -> role.getPermissions().contains(Permission.EDIT));
+    }
 }

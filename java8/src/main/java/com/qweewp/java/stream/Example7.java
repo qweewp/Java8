@@ -4,14 +4,17 @@ import com.qweewp.java.User;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.function.ToIntFunction;
+import java.util.stream.Collectors;
 
 public class Example7 {
     private final Set<User> users = new HashSet<>();
 
+    /**
+     * Change:   Make calculation in a one line using {@link java.util.stream.Stream#mapToInt(ToIntFunction)}.
+     */
     public int getTotalAge() {
-        return users.stream()
-                .map(User::getAge)
-                .reduce(0, Integer::sum);
+        return users.stream().mapToInt(User::getAge).sum();
     }
 
     public Set<User> getUsers() {

@@ -1,6 +1,5 @@
 package com.qweewp.java.stream;
 
-import com.qweewp.java.Role;
 import com.qweewp.java.User;
 
 import java.util.ArrayList;
@@ -11,17 +10,15 @@ public class Example4 {
 
     private final List<User> users = new ArrayList<>();
 
+    /**
+     * Change:  Remove if statement.
+     */
     public boolean hasAdmin() {
         return users.stream()
-                .map(u -> {
-                    if (u == null) {
-                        throw new NullPointerException();
-                    }
-                    return u;
-                })
-                .flatMap(u -> u.getRoles().stream())
-                .map(Role::getName)
-                .anyMatch(name -> ADMIN_ROLE.equals(name));
+                .flatMap(user -> user.getRoles().stream())
+                .map(role -> role.getName().equals(ADMIN_ROLE))
+                .findAny()
+                .orElseThrow(NullPointerException::new);
     }
 
     public List<User> getUsers() {
