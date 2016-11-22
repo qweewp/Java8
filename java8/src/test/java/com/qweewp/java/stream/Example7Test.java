@@ -13,7 +13,7 @@ public class Example7Test {
 
     private Example7 example7 = new Example7();
     private Set<User> users = new HashSet<>();
-    private static Integer totalAge = 0;
+    private static int totalAge = 0;
 
     @Before
     public void feelInputUsersListAndSetItToExample7Instance() {
@@ -40,6 +40,6 @@ public class Example7Test {
 
     @Test
     public void shouldGetTotalAgeFromUsersSet() {
-        assertEquals(40, example7.getTotalAge());
+        assertEquals(totalAge, example7.getTotalAge());
     }
 }

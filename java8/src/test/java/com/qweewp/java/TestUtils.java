@@ -2,7 +2,6 @@ package com.qweewp.java;
 
 import java.util.EnumSet;
 import java.util.HashSet;
-import java.util.Random;
 import java.util.Set;
 
 public class TestUtils {
@@ -37,10 +36,6 @@ public class TestUtils {
         role.setName(name);
         role.setPermissions(EnumSet.of(permission));
         return role;
-    }
-
-    static EnumSet getRandomPermission() {
-        return EnumSet.of(Permission.values()[new Random().nextInt(Permission.values().length)]);
     }
 }
 
