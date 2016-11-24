@@ -5,7 +5,6 @@ import com.qweewp.java.User;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.function.ToIntFunction;
-import java.util.stream.Collectors;
 
 public class Example7 {
     private final Set<User> users = new HashSet<>();

@@ -1,9 +1,11 @@
 package com.qweewp.java.stream;
 
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Set;
 
 import static java.util.Collections.singletonList;
@@ -42,5 +44,24 @@ public class Example6Test {
         assertEquals(1, promoRuleNames.size());
         assertTrue(promoRuleNames.contains(businessRoleName0));
         assertFalse(promoRuleNames.contains(businessRuleName1));
+    }
+
+    @Test
+    public void shouldNotRetrieveAnythingIfBusinessTransactionListIsEmpty() {
+        Example6.BusinessTransaction businessRule = example6.new BusinessTransaction();
+
+        example6.retrievePromoRuleNames(Collections.singletonList(businessRule));
+    }
+
+    @Test
+    public void shouldNotRetrieveAnythingIfBusinessRuleIsNotPromotion() {
+        Example6.BusinessRule businessRule = example6.new BusinessRule();
+
+        when(businessTransaction.getRules()).thenReturn(Collections.singletonList(businessRule));
+
+        Assert.assertEquals("", businessRule.getRuleName());
+        Assert.assertFalse(businessRule.isPromotion());
+
+        example6.retrievePromoRuleNames(Collections.singletonList(businessTransaction));
     }
 }

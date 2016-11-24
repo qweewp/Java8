@@ -8,6 +8,10 @@ import java.util.stream.Stream;
 import static java.util.stream.Collectors.toMap;
 
 public class Example10 {
+
+    /**
+     * Change:   Stream is not necessary in this context.
+     */
     public Map<String, Object> getJpaProperties() {
         return Collections.unmodifiableMap(
                 Stream.of(

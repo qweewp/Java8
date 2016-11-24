@@ -1,5 +1,6 @@
 package com.qweewp.java.stream;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.util.Collections;
@@ -26,5 +27,15 @@ public class Example0Test {
 
         int expectedFilteredSize = 1;
         assertEquals(expectedFilteredSize, example0.filterOrdersByStatuses(orders, appropriateStatuses).size());
+    }
+
+    @Test
+    public void shouldReturnNothingIfStatusIsNull() {
+        Example0.Order order = example0.new Order();
+        List<Example0.Order> filteredOrdersByStatuses = example0.filterOrdersByStatuses(Collections.singletonList(order), Collections.singleton(status));
+
+        Assert.assertNull(order.getStatus());
+
+        Assert.assertTrue(filteredOrdersByStatuses.isEmpty());
     }
 }
