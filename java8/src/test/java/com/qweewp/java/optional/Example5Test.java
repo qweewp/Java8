@@ -17,11 +17,11 @@ public class Example5Test {
 
     private Example5 partialMock = createPartialMock(Example5.class, "findById");
 
-    private User user = new User(5L, "Oleh");
+    private User expectedUser = new User(5L, "Oleh");
 
     @Test(expected = IllegalStateException.class)
     public void shouldThrowExceptionWhenGetUserNameMethodIsInvoke() throws Exception {
-        expectPrivate(partialMock, "findById", user.getId()).andReturn(Optional.empty());
+        expectPrivate(partialMock, "findById", expectedUser.getId()).andReturn(Optional.empty());
         replay(partialMock);
 
         partialMock.getUserName(5L);
@@ -31,15 +31,23 @@ public class Example5Test {
 
     @Test
     public void shouldReturnUserById() throws Exception {
-        Optional<User> privateMethodReturn = Optional.of(user);
+        Optional<User> privateMethodReturn = Optional.of(expectedUser);
 
-        expectPrivate(partialMock, "findById", user.getId()).andReturn(privateMethodReturn);
+        expectPrivate(partialMock, "findById", expectedUser.getId()).andReturn(privateMethodReturn);
         replay(partialMock);
 
         String userName = partialMock.getUserName(5L);
-        assertEquals(userName, user.getName());
+        assertEquals(userName, expectedUser.getName());
 
         verify(partialMock);
+    }
 
+    @Test
+    public void shouldReturnUserOnClassStub() {
+        Example5 example5 = new Example5();
+
+        String actualUser = example5.getUserName(5L);
+
+        assertEquals(expectedUser.getName(), actualUser);
     }
 }

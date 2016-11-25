@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 public class Example2Test {
@@ -53,6 +54,8 @@ public class Example2Test {
         List<Example2.Email> actualList = example2.createStandardEmails();
 
         assertTrue(actualList.size() == 2);
+        assertFalse(secondEmail.getAttachment() == null);
+        assertTrue(firstEmail.getAttachment() == null);
 
         for (int i = 0; i < expectedList.size(); i++) {
             Assert.assertEquals(expectedList.get(i).getBody(), actualList.get(i).getBody());
