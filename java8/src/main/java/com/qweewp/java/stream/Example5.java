@@ -2,7 +2,6 @@ package com.qweewp.java.stream;
 
 import com.qweewp.java.logger.Logger;
 
-import java.util.function.IntUnaryOperator;
 import java.util.stream.IntStream;
 
 public class Example5 {
@@ -19,7 +18,10 @@ public class Example5 {
     }
 
     /**
-     * Change: Replace limit operation because we have an infinity loop if {@link IntStream#iterate(int, IntUnaryOperator)} arguments do not change. And added limit argument.
+     * Change: Replace limit operation because we have an infinity loop if {@link IntStream#distinct()} goes before @{@link IntStream#limit(long)}. And add from and limit argument.
+     *
+     * @param from  start point of iterate.
+     * @param limit limit
      */
     public void distinct(int from, int limit) {
         IntStream.iterate(from, i -> (i + 1) % 2)

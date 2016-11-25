@@ -12,7 +12,7 @@ public class Example4 {
      */
     public Map<String, String> getUserNames(Map<String, User> users) {
         return users.entrySet().stream().
-                collect(Collectors.toMap(Map.Entry::getKey, p -> p.getValue().getName()));
+                collect(Collectors.toMap(Map.Entry::getKey, userEntry -> userEntry.getValue().getName()));
 
     }
 }

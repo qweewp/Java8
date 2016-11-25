@@ -1,6 +1,7 @@
 package com.qweewp.java.lambda;
 
 import com.qweewp.java.User;
+import com.qweewp.java.UserTools;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -12,11 +13,11 @@ public class Example0 {
 
     /**
      * Change:  add {@link Example0#getUsers()} for access to private final list
-     *          create {@link User#hasEditPermission()} method, to make filter predicate smaller.
+     *          create {@link UserTools#hasEditPermission(User)} method, to make filter predicate smaller.
      */
     public Set<User> findEditors() {
         return users.stream()
-                .filter(User::hasEditPermission)
+                .filter(UserTools::hasEditPermission)
                 .collect(toSet());
     }
 

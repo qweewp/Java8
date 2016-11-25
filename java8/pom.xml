@@ -67,10 +67,10 @@
 
                 <configuration>
                     <excludedClasses>
-                        <class>com.epam.cdp.java.entity.Role</class>
-                        <class>com.epam.cdp.java.entity.User</class>
-                        <class>com.epam.cdp.java.entity.UserDto</class>
-                        <class>com.epam.cdp.java.entity.UserTransformer</class>
+                        <class>com.qweewp.java.Role</class>
+                        <class>com.qweewp.java.User</class>
+                        <class>com.qweewp.java.UserDto</class>
+                        <class>com.qweewp.java.UserTransformer</class>
                     </excludedClasses>
                     <targetClasses>
                         <param>com*</param>

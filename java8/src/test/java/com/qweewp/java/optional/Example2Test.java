@@ -1,5 +1,4 @@
-package com.epam.cdp.java.optional;
-
+package com.qweewp.java.optional;
 
 import org.junit.Assert;
 import org.junit.Before;

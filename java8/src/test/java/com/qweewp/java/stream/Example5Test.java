@@ -1,6 +1,6 @@
-package com.epam.cdp.java.stream;
+package com.qweewp.java.stream;
 
-import com.epam.cdp.java.entity.logger.Logger;
+import com.qweewp.java.logger.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;

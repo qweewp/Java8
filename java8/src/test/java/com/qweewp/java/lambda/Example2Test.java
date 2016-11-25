@@ -1,9 +1,11 @@
-package com.epam.cdp.java.lambda;
+package com.qweewp.java.lambda;
 
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 public class Example2Test {
 

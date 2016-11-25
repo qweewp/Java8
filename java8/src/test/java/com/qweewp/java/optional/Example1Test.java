@@ -1,6 +1,6 @@
-package com.epam.cdp.java.optional;
+package com.qweewp.java.optional;
 
-import com.epam.cdp.java.entity.User;
+import com.qweewp.java.User;
 import org.junit.Test;
 import org.mockito.Mockito;
 

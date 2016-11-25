@@ -20,9 +20,10 @@ public class Example1 {
      * Change:  Make the code easiest to read using @{@link Collectors#groupingBy(Function, Collector)}.
      */
     public Map<String, Set<User>> findEditors() {
-        return users.stream().flatMap(user -> user.getRoles().stream()
-                .filter(role -> role.getPermissions().contains(Permission.EDIT))
-                .map(role -> new SimpleImmutableEntry<>(role.getName(), user)))
+        return users.stream()
+                .flatMap(user -> user.getRoles().stream()
+                        .filter(role -> role.getPermissions().contains(Permission.EDIT))
+                        .map(role -> new SimpleImmutableEntry<>(role.getName(), user)))
                 .collect(Collectors.groupingBy(SimpleImmutableEntry::getKey, Collectors.mapping(SimpleImmutableEntry::getValue, toSet())));
     }
 

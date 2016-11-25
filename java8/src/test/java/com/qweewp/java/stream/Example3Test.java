@@ -1,12 +1,14 @@
-package com.epam.cdp.java.stream;
+package com.qweewp.java.stream;
 
-import com.epam.cdp.java.entity.logger.Logger;
+import com.qweewp.java.logger.Logger;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 public class Example3Test {
 

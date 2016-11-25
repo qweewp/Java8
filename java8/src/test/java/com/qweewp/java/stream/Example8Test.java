@@ -1,7 +1,7 @@
-package com.epam.cdp.java.stream;
+package com.qweewp.java.stream;
 
-import com.epam.cdp.java.entity.User;
-import com.epam.cdp.java.entity.register.Register;
+import com.qweewp.java.User;
+import com.qweewp.java.register.Register;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -9,7 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.times;
+import static org.mockito.Mockito.verify;
 
 public class Example8Test {
     private Example8 example8 = new Example8();

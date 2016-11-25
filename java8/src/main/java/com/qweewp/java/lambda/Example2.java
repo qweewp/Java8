@@ -11,7 +11,8 @@ public class Example2 {
     }
 
     /**
-     * Change:  change method name, because we do not know which of this will be invoke.
+     * Change:  Change method name, because if we pass a method reference(for example String::toUpperCase)
+     * to this method we always invoke method with <code> UnaryOperator<T>fn </> signature.
      */
     interface AmbiguousService<T> {
         <R> R change(Function<T, R> fn);
